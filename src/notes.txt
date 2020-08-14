@@ -1,0 +1,52 @@
+
+
+(*  
+    | n = list(node) {n}
+
+    |"fair" FAIR
+    | "justice" {JUSTICE}
+
+    |"dec" {DEC}       (* arithmetic *)
+    |"inc" {INC}       (* arithmetic *)
+
+| n = NUM SORT ARRAY s1 = NUM s2 = NUM {Array(s1, s2)}
+
+
+let s0 = BitVec(0)
+
+let s1 = BitVec(1)
+let s2 = BitVec(8)
+let a1 = Array(s1, s2)
+
+let q = [a1; s1;s2]
+let n0 = Sort(s0)
+
+let n1 = Sort(s1)
+let n2 = Sort(s2)
+
+let n3 = Input(s1, "turn")
+let n4 = Value(s2, Zero)
+let n5 = State(s2, "a")
+let n6 = State(s2, "b")
+let n7 = Init(s2, n5, n4)
+
+let n9 = Op(ADD, n5, n6)
+let n11 = Op(EQ, n9, n4)
+let n12 = Prop(BAD, n11)
+
+let bp = Nodes [n0;n1;n2;n3;n4;n5;n6;n7;n9;n11;n12]
+
+
+(* -- visitor pattern. AST.
+  Type: AST
+  Lexer: String -> Tokens 
+  Parser: Tokens -> AST.
+*)
+
+(*   
+#require hex;
+Hex.t
+#use "topfind" ;;
+#require "hex" ;;
+#hex.of_string "ABCD";;
+*)
