@@ -42,7 +42,11 @@ rule read = parse
     (* Properties *)
     | "bad" {BAD}
     | "constraint" {CONSTRAINT}
-
+    | "fair" {FAIR}
+    | "Output" {OUTPUT}
+    | "Justice" {JUSTICE}
+ 
+    (* Constants *)      
     | "const" {CONST}        (* Bitvector Constant *)
     | "constd" {CONSTD}      (* Bitvector Constant Decimal *)   
     | "consth" {CONSTH}      (* Bitvector Constant Hex *) 
@@ -62,7 +66,7 @@ rule read = parse
     (* [op] Unary unindexed operators  *)
     (* -------------------------------- *)
     | "not" {NOT}       (* Bit-wise *)
-    | "neg" {NEG}       (* arithmetic *)
+    | "-" {NEG}       (* arithmetic *)
 
     | "redand" {REDAND}  (* reduction *)
     | "redor" {REDOR}    (* reduction *)
