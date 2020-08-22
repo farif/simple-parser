@@ -77,7 +77,7 @@ let p4 = " 1 sort bitvec 1
         20 bad 19
     "
 
-let n = Parser.main Lexer.read (Lexing.from_string p4) 
+let n = Parser.main Lexer.read (Lexing.from_string p2) 
 
 let () =  print_endline  ("Parsed Program (AST):") ; Util.print_btor n  
  

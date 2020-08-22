@@ -11,6 +11,7 @@
   type state = 
     | StateV of sort * string
 
+
   type value = 
     | One   of sort              (* Input Values range over One, Zero, Zeros*)
     | Ones  of sort
